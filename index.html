@@ -7,33 +7,43 @@
     <style>
         body { font-family: Arial, sans-serif; background-color: #121212; color: white; text-align: center; padding: 20px; }
         .container { max-width: 500px; margin: auto; background: #1e1e1e; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-        h1 { color: #ff6600; }
-        input, select, button { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: none; box-sizing: border-box; }
-        input, select { background: #333; color: white; }
-        button { background: #ff6600; color: white; font-weight: bold; cursor: pointer; font-size: 16px; }
-        button:hover { background: #e05500; }
+        h1 { color: #ff6600; margin-bottom: 5px; }
+        .subtitle { color: #aaa; font-size: 14px; margin-bottom: 20px; }
+        label { display: block; text-align: left; margin-top: 15px; font-weight: bold; color: #ff6600; }
+        input, select, button { width: 100%; padding: 12px; margin: 8px 0; border-radius: 5px; border: none; box-sizing: border-box; }
+        input, select { background: #333; color: white; font-size: 16px; }
+        input:focus, select:focus { outline: 2px solid #ff6600; }
+        .btn-main { background: #ff6600; color: white; font-weight: bold; cursor: pointer; font-size: 16px; text-transform: uppercase; }
+        .btn-main:hover { background: #e05500; }
+        .btn-support { background: #25D366; color: white; font-weight: bold; cursor: pointer; font-size: 14px; margin-top: 20px; display: inline-block; padding: 10px; text-decoration: none; border-radius: 5px; width: 100%; box-sizing: border-box; }
+        .btn-support:hover { background: #20ba5a; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h1>PDGCR7 TOPUP</h1>
-    <p>Achte dyaman Free Fire rapid ak MonCash!</p>
+    <div class="subtitle">Achte PIN ak dyaman Free Fire rapid ak MonCash!</div>
     
     <form id="topupForm">
-        <label>ID Jwè Free Fire:</label>
-        <input type="number" id="playerID" placeholder="Mete ID ou isit la" required>
+        <label for="playerID">ID Jwè Free Fire:</label>
+        <input type="number" id="playerID" placeholder="Mete ID ou isit la (Eg: 12345678)" required>
 
-        <label>Chwazi Kantite Dyaman:</label>
+        <label for="diamonds">Chwazi Kantite Dyaman & Pri:</label>
         <select id="diamonds" required>
-            <option value="100 Dyaman">100 Dyaman</option>
-            <option value="310 Dyaman">310 Dyaman</option>
-            <option value="520 Dyaman">520 Dyaman</option>
-            <option value="1060 Dyaman">1060 Dyaman</option>
+            <option value="110 Dyaman - 160 HTG">110 Dyaman - 160 HTG</option>
+            <option value="340 Dyaman - 480 HTG">340 Dyaman - 480 HTG</option>
+            <option value="570 Dyaman - 800 HTG">570 Dyaman - 800 HTG</option>
+            <option value="1190 Dyaman - 1600 HTG">1190 Dyaman - 1600 HTG</option>
+            <option value="2390 Dyaman - 3100 HTG">2390 Dyaman - 3100 HTG</option>
         </select>
 
-        <button type="button" onclick="voyeKoman()">Achte Kounye a</button>
+        <button type="button" class="btn-main" onclick="voyeKoman()">Achte PIN Kounye a</button>
     </form>
+
+    <a href="https://wa.me/50935304335?text=Bonjou%20PDGCR7%20TOPUP%2C%20mwen%20gen%20yon%20kesyon%20tanpri." target="_blank" class="btn-support">
+        💬 Kontakte Sipò sou WhatsApp
+    </a>
 </div>
 
 <script>
@@ -48,9 +58,9 @@ function voyeKoman() {
     
     var nimewoTelefon = "50935304335"; 
     
-    var mesaj = "Bonjou PDGCR7 TOPUP, mwen ta renmen fè yon Top-up Free Fire:\n\n" +
+    var mesaj = "Bonjou PDGCR7 TOPUP, mwen ta renmen achte yon PIN Free Fire:\n\n" +
                 "ID Jwè: " + id + "\n" +
-                "Pakè: " + dyaman + "\n\n" +
+                "Pakè & Pri: " + dyaman + "\n\n" +
                 "Ban m enstriksyon pou m peye ak MonCash tanpri.";
                 
     var url = "https://wa.me/" + nimewoTelefon + "?text=" + encodeURIComponent(mesaj);
