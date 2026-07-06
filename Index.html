@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDGCR7 TOPUP</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #121212; color: white; text-align: center; padding: 20px; }
+        .container { max-width: 500px; margin: auto; background: #1e1e1e; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        h1 { color: #ff6600; }
+        input, select, button { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: none; box-sizing: border-box; }
+        input, select { background: #333; color: white; }
+        button { background: #ff6600; color: white; font-weight: bold; cursor: pointer; font-size: 16px; }
+        button:hover { background: #e05500; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>PDGCR7 TOPUP</h1>
+    <p>Achte dyaman Free Fire rapid ak MonCash!</p>
+    
+    <form id="topupForm">
+        <label>ID Jwè Free Fire:</label>
+        <input type="number" id="playerID" placeholder="Mete ID ou isit la" required>
+
+        <label>Chwazi Kantite Dyaman:</label>
+        <select id="diamonds" required>
+            <option value="100 Dyaman">100 Dyaman</option>
+            <option value="310 Dyaman">310 Dyaman</option>
+            <option value="520 Dyaman">520 Dyaman</option>
+            <option value="1060 Dyaman">1060 Dyaman</option>
+        </select>
+
+        <button type="button" onclick="voyeKoman()">Achte Kounye a</button>
+    </form>
+</div>
+
+<script>
+function voyeKoman() {
+    var id = document.getElementById('playerID').value;
+    var dyaman = document.getElementById('diamonds').value;
+    
+    if(id == "") {
+        alert("Tanpri mete ID Free Fire ou!");
+        return;
+    }
+    
+    var nimewoTelefon = "50935304335"; 
+    
+    var mesaj = "Bonjou PDGCR7 TOPUP, mwen ta renmen fè yon Top-up Free Fire:\n\n" +
+                "ID Jwè: " + id + "\n" +
+                "Pakè: " + dyaman + "\n\n" +
+                "Ban m enstriksyon pou m peye ak MonCash tanpri.";
+                
+    var url = "https://wa.me/" + nimewoTelefon + "?text=" + encodeURIComponent(mesaj);
+    window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
