@@ -5,68 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDGCR7 TOPUP</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #121212; color: white; text-align: center; padding: 20px; }
-        .container { max-width: 500px; margin: auto; background: #1e1e1e; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-        h1 { color: #ff6600; margin-bottom: 5px; }
-        .subtitle { color: #aaa; font-size: 14px; margin-bottom: 20px; }
+        body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; margin: 0; padding: 20px; text-align: center; }
+        .header { background: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .header h1 { color: #0033aa; margin: 0; font-size: 24px; text-transform: uppercase; }
+        .section-title { text-align: left; max-width: 1000px; margin: 20px auto; font-size: 20px; font-weight: bold; color: #0033aa; border-left: 4px solid #0033aa; padding-left: 10px; }
+        .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 1000px; margin: auto; }
+        @media (max-width: 600px) { .grid-container { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 12px; }
+        .card img { width: 100%; height: 140px; object-fit: cover; }
+        .card h3 { font-size: 14px; margin: 10px 0; text-transform: uppercase; color: #111; font-weight: bold; }
+        .btn-klike { background: #1a46e5; color: white; border: none; padding: 10px; margin: 0 10px; border-radius: 6px; font-weight: bold; cursor: pointer; text-decoration: none; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+        .modal { display: none; position: fixed; z-index: 200; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
+        .modal-content { background: #1e1e1e; color: white; padding: 20px; border-radius: 10px; max-width: 450px; width: 100%; position: relative; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .close-btn { position: absolute; top: 10px; right: 15px; color: #aaa; font-size: 28px; font-weight: bold; cursor: pointer; }
+        .modal-content h2 { color: #ff6600; margin-top: 10px; font-size: 20px; text-transform: uppercase; }
         label { display: block; text-align: left; margin-top: 15px; font-weight: bold; color: #ff6600; }
-        input, select, button { width: 100%; padding: 12px; margin: 8px 0; border-radius: 5px; border: none; box-sizing: border-box; }
-        input, select { background: #333; color: white; font-size: 16px; }
+        input, select, .btn-main { width: 100%; padding: 12px; margin: 8px 0; border-radius: 5px; border: none; box-sizing: border-box; font-size: 16px; }
+        input, select { background: #333; color: white; }
         input:focus, select:focus { outline: 2px solid #ff6600; }
-        .btn-main { background: #ff6600; color: white; font-weight: bold; cursor: pointer; font-size: 16px; text-transform: uppercase; }
-        .btn-main:hover { background: #e05500; }
-        .btn-support { background: #25D366; color: white; font-weight: bold; cursor: pointer; font-size: 14px; margin-top: 20px; display: inline-block; padding: 10px; text-decoration: none; border-radius: 5px; width: 100%; box-sizing: border-box; }
-        .btn-support:hover { background: #20ba5a; }
+        .btn-main { background: #ff6600; color: white; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 100; text-decoration: none; }
+        .whatsapp-float img { width: 35px; height: 35px; }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="header">
     <h1>PDGCR7 TOPUP</h1>
-    <div class="subtitle">Achte PIN ak dyaman Free Fire rapid ak MonCash!</div>
-    
-    <form id="topupForm">
-        <label for="playerID">ID Jwè Free Fire:</label>
-        <input type="number" id="playerID" placeholder="Mete ID ou isit la (Eg: 12345678)" required>
-
-        <label for="diamonds">Chwazi Kantite Dyaman & Pri:</label>
-        <select id="diamonds" required>
-            <option value="110 Dyaman - 160 HTG">110 Dyaman - 160 HTG</option>
-            <option value="340 Dyaman - 480 HTG">340 Dyaman - 480 HTG</option>
-            <option value="570 Dyaman - 800 HTG">570 Dyaman - 800 HTG</option>
-            <option value="1190 Dyaman - 1600 HTG">1190 Dyaman - 1600 HTG</option>
-            <option value="2390 Dyaman - 3100 HTG">2390 Dyaman - 3100 HTG</option>
-        </select>
-
-        <button type="button" class="btn-main" onclick="voyeKoman()">Achte PIN Kounye a</button>
-    </form>
-
-    <a href="https://wa.me/50935304335?text=Bonjou%20PDGCR7%20TOPUP%2C%20mwen%20gen%20yon%20kesyon%20tanpri." target="_blank" class="btn-support">
-        💬 Kontakte Sipò sou WhatsApp
-    </a>
 </div>
 
+<div class="section-title">JWÈT</div>
+
+<div class="grid-container">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&q=80" alt="Free Fire">
+        <h3>FREE FIRE</h3>
+        <button class="btn-klike" onclick="louvriFom('FREE FIRE')">🛒 KLIKE LA</button>
+    </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&q=80" alt="Blood Strike">
+        <h3>BLOOD STRIKE</h3>
+        <button class="btn-klike" onclick="louvriFom('BLOOD STRIKE')">🛒 KLIKE LA</button>
+    </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1627856013091-fed6e4e30025?w=500&q=80" alt="PUBG">
+        <h3>PUBG</h3>
+        <button class="btn-klike" onclick="louvriFom('PUBG')">🛒 KLIKE LA</button>
+    </div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500&q=80" alt="Roblox">
+        <h3>ROBLOX</h3>
+        <button class="btn-klike" onclick="louvriFom('ROBLOX')">🛒 KLIKE LA</button>
+    </div>
+</div>
+
+<div id="fomModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="femenFom()">&times;</span>
+        <h2 id="jwetTit">TOP-UP</h2>
+        <form id="topupForm" autocomplete="off">
+            <label for="playerID">ID Jwè:</label>
+            <input type="number" id="playerID" placeholder="Mete ID ou isit la (Eg: 12345678)" required>
+            <label for="diamonds">Chwazi Kantite & Pri:</label>
+            <select id="diamonds" required>
+                <option value="110 Dyaman - 160 HTG">110 Dyaman - 160 HTG</option>
+                <option value="340 Dyaman - 480 HTG">340 Dyaman - 480 HTG</option>
+                <option value="570 Dyaman - 800 HTG">570 Dyaman - 800 HTG</option>
+                <option value="1190 Dyaman - 1600 HTG">1190 Dyaman - 1600 HTG</option>
+                <option value="2390 Dyaman - 3100 HTG">2390 Dyaman - 3100 HTG</option>
+            </select>
+            <button type="button" class="btn-main" onclick="voyeKoman()">Achte PIN Kounye a</button>
+        </form>
+    </div>
+</div>
+
+<a href="https://wa.me/50935304335" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
 <script>
+var jwetChwazi = "";
+function louvriFom(nonJwet) {
+    jwetChwazi = nonJwet;
+    document.getElementById('jwetTit').innerText = "TOP-UP " + nonJwet;
+    document.getElementById('playerID').value = '';
+    document.getElementById('fomModal').style.display = 'flex';
+}
+function femenFom() { document.getElementById('fomModal').style.display = 'none'; }
 function voyeKoman() {
     var id = document.getElementById('playerID').value;
     var dyaman = document.getElementById('diamonds').value;
-    
-    if(id == "") {
-        alert("Tanpri mete ID Free Fire ou!");
-        return;
-    }
-    
-    var nimewoTelefon = "50935304335"; 
-    
-    var mesaj = "Bonjou PDGCR7 TOPUP, mwen ta renmen achte yon PIN Free Fire:\n\n" +
-                "ID Jwè: " + id + "\n" +
-                "Pakè & Pri: " + dyaman + "\n\n" +
-                "Ban m enstriksyon pou m peye ak MonCash tanpri.";
-                
-    var url = "https://wa.me/" + nimewoTelefon + "?text=" + encodeURIComponent(mesaj);
-    window.open(url, '_blank');
+    if(id == "") { alert("Tanpri mete ID Jwè ou!"); return; }
+    var mesaj = "Bonjou PDGCR7 TOPUP, mwen ta renmen achte yon PIN:\n\nJwè: " + jwetChwazi + "\nID Jwè: " + id + "\nPakè & Pri: " + dyaman + "\n\nBan m enstriksyon pou m peye ak MonCash tanpri.";
+    window.open("https://wa.me/50935304335?text=" + encodeURIComponent(mesaj), '_blank');
 }
 </script>
-
 </body>
 </html>
